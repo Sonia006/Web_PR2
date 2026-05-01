@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>planta_automatizada_pr2_g1_3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bungee&family=Oswald:wght@200..700&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class = "titulo">
+        <div class="encabezado_total">
+            <div class="encabezado_empresa">
+                <p>PR2-13</p>
+            </div>
+            <div class="encabezado_botones">
+                <button>Nuestro Proyecto</button>
+                <button>Sobre Nosotros</button>
+            </div>
+        </div>
+        <div class="modelo_titulo">
+            <p>MODELOS</p>
+        </div>
+        <img src="LEGA_fondo_1.png">
+        <h1>LEGA</h1>
+    </div>
+    
+    <div id = "contenedor" class="contenedor">
+        <div class="explicacion_pagina">
+            <p style="font-size: 1.5rem;" ><b>
+                Elige, construye y disfruta.  
+            </b></p>
+            <p>
+                Explora nuestros modelos LEGA y selecciona el que quieras montar. 
+            </p>
+            <p>
+                Indica el numero que pedidos que quieras realizar (maximo 5 por cada modelo) y haz clik en "Elegir"
+                para que tu pedido sea realizado.
+            </p>
+        </div>
+
+        <div class="todos_los_modelos">
+            <div class="botones_verticales_modelos">
+                <button onclick="Seleccionar_modelo('modelo_classic_computer')" style="background-color:#ffdaa7;">Classic Computer</button>
+                <button onclick="Seleccionar_modelo('modelo_minibot')" style="background-color: #92bbeb;">Mini-Bot</button>
+            </div>
+
+            <div class="modelo_classic_computer" id="modelo_classic_computer">
+                <img src = "Classic_Computer.png">
+                <div class="explicacion_modelo">
+                    <h3 style="font-size: 1.5rem;">LEGA Classic Computer</h3> 
+                    <p>
+                        Un homenaje retro en forma de bloques. Construye tu propio ordenador 
+                        clásico con monitor cuadrado, teclado antiguo y ratón de bola. Un modelo
+                         perfecto para fans de la tecnología vintage y la estética ochentera.
+                    </p>
+                    <h3 style="font-size: 1rem;">Elige la cantidad</h3>
+                    <div class="modelos_boton_de_eleccion">
+                        <input type="number" id = "cantidad-classic" value="1" min="1" max="5">
+                        <button onclick="enviar_pedido_mqtt('modelo_classic_computer')">Elegir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modelo_minibot" id="modelo_minibot" style="display: none;">
+                <img src = "Mini_Bot.png">
+                <div class="explicacion_modelo">
+                    <h3 style="font-size: 1.5rem;">LEGA Mini-Bot</h3> 
+                    <p>
+                        Un pequeño robot blanco y azul inspirado en los robots de limpieza 
+                        futuristas. Monta a MO pieza a pieza y dale vida a este simpático asistente 
+                        listo para acompañarte en cualquier aventura.
+                    </p>
+                    <h3 style="font-size: 1rem;">Elige la cantidad</h3>
+                    <div class="modelos_boton_de_eleccion">
+                        <input type="number" id = "cantidad-minibot" value="1" min="1" max="5">
+                        <button onclick="enviar_pedido_mqtt('modelo_minibot')">Elegir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 
+    <div class ="Boton_atras" id = "Boton_atras_computer" style="display: none";>
+        <div class = "pedido" id = "pedido-classic">
+            <img src = "Classic_Computer.png">
+            <div class="info">
+                <h3>Elige la cantidad que quieras</h3>
+                <div class="pedido">
+                    <input type="number" id = "cantidad-classic" value="1" min="1" max="5">
+                    <button onclick="enviar_pedido_mqtt('Classic_Computer')">Elegir</button>
+                </div>
+            </div>
+        </div>
+        <button onclick="Boton_ir_atras()">Atras</button>
+    </div>
+    
+
+    <div class="Boton_atras" id = "Boton_atras_minibot" style="display: none";>
+        <div class = "pedido" id = "pedido-minibot">
+            <img src = "Mini_Bot.png">
+            <div class="info">
+                <h3>Elige la cantidad que quieras</h3>
+                <div class="pedido">
+                    <input type="number" id = "cantidad-minibot" value="1" min="1" max="5">
+                    <button onclick="enviar_pedido_mqtt('Mini-Bot')">Elegir</button>
+                </div>
+            </div>
+        </div>
+        <button onclick="Boton_ir_atras()">Atras</button>
+    </div>
+Esto es un comentario en HTML y no se verá en la web -->
+
+    <script src="app.js"></script>
+</body>
+</html>
