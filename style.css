@@ -290,8 +290,8 @@ button:active {
 
   .encabezado_botones {
     position: relative;
-    left: 0;
-    top: 0;
+    left: auto;
+    top: auto;
     width: auto;
     border-radius: 50px;
     flex-wrap: wrap;
@@ -305,10 +305,18 @@ button:active {
     top: 5px;
     left: 5px;
     right: 5px;
+    display: flex;
     flex-direction: column;
+    aling-intems: flex-start;
     gap: 6px;
   }
-
+  
+  .encabezado_empresa {
+  position: relative; 
+  top: auto;
+  left: auto;
+  }
+  
   .encabezado_empresa p {
     font-size: 0.8rem;
   }
@@ -335,7 +343,7 @@ button:active {
 
   .botones_verticales_modelos {
     writing-mode: horizontal-tb;
-    transform: rotate(180deg);
+    transform: rotate(0deg);
     flex-direction: row;
     width: fit-content;
     margin-bottom: 0;
