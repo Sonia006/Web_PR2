@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <title>planta_automatizada_pr2_g1_3</title>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bungee&family=Oswald:wght@200..700&family=Righteous&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -21,18 +17,25 @@
                 <p>PR2-13</p>
             </div>
             <div class="encabezado_botones">
-                <button>Nuestro Proyecto</button>
-                <button>Sobre Nosotros</button>
+                <button onclick="seleccionar_pagina_visible('contenedor_modelos')" >Modelos</button>
+                <button onclick="seleccionar_pagina_visible('contenedor_nuestro_proyecto')" >Nuestro Proyecto</button>
+                <button onclick="seleccionar_pagina_visible('contenedor_sobre_nosotros')" >Sobre Nosotros</button>
             </div>
         </div>
-        <div class="modelo_titulo">
+        <div class="modelo_titulo" id="titulo_modelos">
             <p>MODELOS</p>
+        </div>
+        <div class="modelo_titulo" id="titulo_nuestro_proyecto" style="display: none;">
+            <p>NUESTRO PROYECTO</p>
+        </div>
+        <div class="modelo_titulo" id="titulo_sobre_nosotros" style="display: none;">
+            <p>SOBRE NOSOTROS</p>
         </div>
         <img src="LEGA_fondo_1.png">
         <h1>LEGA</h1>
     </div>
-    
-    <div id = "contenedor" class="contenedor">
+
+    <div id = "contenedor_modelos" class="contenedor_modelos">
         <div class="explicacion_pagina">
             <p style="font-size: 1.5rem;" ><b>
                 Elige, construye y disfruta.  
@@ -87,36 +90,23 @@
             </div>
         </div>
     </div>
-<!-- 
-    <div class ="Boton_atras" id = "Boton_atras_computer" style="display: none";>
-        <div class = "pedido" id = "pedido-classic">
-            <img src = "Classic_Computer.png">
-            <div class="info">
-                <h3>Elige la cantidad que quieras</h3>
-                <div class="pedido">
-                    <input type="number" id = "cantidad-classic" value="1" min="1" max="5">
-                    <button onclick="enviar_pedido_mqtt('Classic_Computer')">Elegir</button>
-                </div>
-            </div>
-        </div>
-        <button onclick="Boton_ir_atras()">Atras</button>
-    </div>
-    
 
-    <div class="Boton_atras" id = "Boton_atras_minibot" style="display: none";>
-        <div class = "pedido" id = "pedido-minibot">
-            <img src = "Mini_Bot.png">
-            <div class="info">
-                <h3>Elige la cantidad que quieras</h3>
-                <div class="pedido">
-                    <input type="number" id = "cantidad-minibot" value="1" min="1" max="5">
-                    <button onclick="enviar_pedido_mqtt('Mini-Bot')">Elegir</button>
-                </div>
-            </div>
-        </div>
-        <button onclick="Boton_ir_atras()">Atras</button>
+    <div class="contenedor_nuestro_proyecto" id="contenedor_nuestro_proyecto" style="display: none;">
+        <p>
+            Este proyecto se ha centrado en la automatización del proceso de llenado y tapado de cajas de LEGO, es un procedimiento que
+             actualmente se hace de forma manual y que presenta limitaciones en cuanto a velocidad, repetibilidad y ergonomía. 
+             El objetivo ha sido diseñar e implementar una solución automatizada que permita mejorar este flujo de trabajo utilizando 
+             robots colaborativos.
+            El proyecto consiste en configurar una célula en la cual un robot UR3 deposite las piezas de LEGO dentro de las cajas 
+            y, a continuación, un segundo UR3 coloca la tapa, completando el proceso de llenado de cajas.
+        </p>
     </div>
-Esto es un comentario en HTML y no se verá en la web -->
+
+    <div class="contenedor_sobre_nosotros" id="contenedor_sobre_nosotros" style="display: none;">
+        <p>
+            Grupo Formado por: Sonia. S Galeas, Marcos Mérida, Lucía Remolar, Marta Ros
+        </p>
+    </div>
 
     <script src="app.js"></script>
 </body>
