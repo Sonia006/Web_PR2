@@ -70,7 +70,7 @@ input[type="number"] {
 .encabezado_botones {
   position: absolute;
   top: 10px;
-  left: 70px;
+  left: 90px;
   width: auto;
   display: flex;
   flex-direction: row;
@@ -133,7 +133,7 @@ input[type="number"] {
   margin: 0;
 }
 
-.contenedor {
+.contenedor_modelos {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -259,6 +259,14 @@ p {
   color: #090e0f;
 }
 
+h3 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: #090e0f;
+}
+
 button, input, select, textarea {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
@@ -272,24 +280,45 @@ button:active {
 
 @media (max-width: 600px) {
   .titulo {
-    height: 250px;
+    height: 200px;
     overflow: hidden;
   }
 
   .titulo h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .encabezado_botones {
-    left: 50px;
-    padding: 6px 10px;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 8px;
+  }
+
+  .encabezado_total {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .encabezado_empresa p {
+    font-size: 0.8rem;
   }
 
   .encabezado_botones button {
     font-size: 0.7rem;
+    padding: 4px 8px;
   }
 
-  .contenedor {
+  .contenedor_modelos {
     flex-direction: column;
   }
 
@@ -301,21 +330,18 @@ button:active {
 
   .todos_los_modelos {
     width: 100%;
-    flex-direction: column;
+    flex-direction: row; /* ← mantiene botones verticales como carpeta */
   }
 
   .botones_verticales_modelos {
-    writing-mode: horizontal-tb;
-    transform: rotate(0deg);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
     flex-direction: row;
-    width: 100%;
-    margin-bottom: 10px;
   }
 
   .botones_verticales_modelos button {
-    flex: 1;
-    border-radius: 8px;
-    padding: 12px;
+    padding: 16px 10px;
+    font-size: 0.8rem;
   }
 
   .modelo_classic_computer,
@@ -329,20 +355,27 @@ button:active {
   .modelo_minibot img {
     width: 90%;
     margin-left: 0;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    order: 1; /* imagen primero */
   }
 
   .explicacion_modelo {
     width: 90%;
     margin-right: 0;
+    order: 2; /* titulo, explicacion y botones despues */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .modelos_boton_de_eleccion {
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 10px;
   }
 
   .explicacion_modelo button {
-    width: 60%;
+    width: auto;
+    padding: 10px 20px;
   }
 }
