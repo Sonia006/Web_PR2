@@ -15,6 +15,27 @@ function Seleccionar_modelo (id) {
   document.getElementById(id).style.display = "flex";
 }
 
+function seleccionar_pagina_visible(id) {
+  document.getElementById('contenedor_modelos').style.display = "none";
+  document.getElementById('contenedor_nuestro_proyecto').style.display = "none";
+  document.getElementById('contenedor_sobre_nosotros').style.display = "none";
+  document.getElementById(id).style.display = "flex";
+
+  if (id == 'contenedor_modelos') {
+    document.getElementById('titulo_modelos').style.display = "flex";
+    document.getElementById('titulo_nuestro_proyecto').style.display = "none";
+    document.getElementById('titulo_sobre_nosotros').style.display = "none";
+  } else if (id == 'contenedor_nuestro_proyecto') {
+    document.getElementById('titulo_nuestro_proyecto').style.display = "flex";
+    document.getElementById('titulo_modelos').style.display = "none";
+    document.getElementById('titulo_sobre_nosotros').style.display = "none";
+  } else {
+    document.getElementById('titulo_sobre_nosotros').style.display = "flex";
+    document.getElementById('titulo_nuestro_proyecto').style.display = "none";
+    document.getElementById('titulo_modelos').style.display = "none";
+  }
+}
+
 function Boton_ir_atras() {
   document.getElementById('contenedor').style.display = "flex";
   document.getElementById('Boton_atras_minibot').style.display = "none";
