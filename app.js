@@ -54,11 +54,19 @@ function menu() {
 function enviar_pedido_mqtt(modelo) {
   const idCantidad = modelo === 'modelo_classic_computer' ? 'cantidad-classic' : 'cantidad-minibot';
   const cantidad = document.getElementById(idCantidad).value;
-  const mensaje = JSON.stringify({
-    modelo: modelo,
-    cantidad: cantidad
-  });
+  
+  let mensaje;
 
-  cliente.publish('PR2_1_3/linea1/presencia', mensaje);
+  if (modelo === 'modelo_classic_computer') {
+    mensaje = JSON.stringify({
+      cajas_tipo_1: cantidad
+    });
+  } else {
+    mensaje = JSON.stringify({
+      cajas_tipo_2: cantidad
+    });
+  }
+
+  cliente.publish('PR2_1_3/linea1/web', mensaje);
   alert('Pedido enviado: ' + cantidad + 'x ' + modelo);
 }
