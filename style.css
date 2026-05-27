@@ -143,8 +143,10 @@ input[type="number"] {
 
 .explicacion_pagina {
   width: 30%;
-  text-align: initial;
+  text-align: justify;
   margin-right: 20px;
+  background-color: rgba(243, 236, 236, 0.95);
+  border-radius: 16px;
 }
 
 .todos_los_modelos{
@@ -246,6 +248,9 @@ p {
   font-style: normal;
   font-size: 1rem;
   color: #090e0f;
+  padding-right: 20px;
+  text-align: justify;
+  padding-left: 20px;
 }
 
 h3 {
@@ -254,13 +259,15 @@ h3 {
   font-style: normal;
   font-size: 1.5rem;
   color: #090e0f;
+  padding-left: 20px;
 }
 
 button, input, select, textarea {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
-  font-style: normal;
+  font-style:normal;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button:active {
@@ -275,7 +282,7 @@ button:active {
   }
 
   .titulo h1 {
-    font-size: 2.5rem;
+    font-size: 3.1rem;
   }
 
   .encabezado_botones {
@@ -310,7 +317,7 @@ button:active {
 
   .encabezado_botones button {
     font-size: 0.7rem;
-    padding: 4px 8px;
+    padding: 2px 4px;
   }
 
   .contenedor_modelos {
